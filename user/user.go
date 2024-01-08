@@ -40,6 +40,7 @@ func (self *Self) SetRouter(r *httprouter.Router) {
 
 	r.GET("/login", mw.LoggingMiddleware(mw.CapturePanic(LoginViewHandler)))
 	r.POST("/login", mw.LoggingMiddleware(mw.CapturePanic(LoginViewHandler)))
+	r.DELETE("/login", mw.LoggingMiddleware(mw.CapturePanic(LoginViewHandler)))
 	r.GET("/logout", mw.LoggingMiddleware(Logout))
 }
 
